@@ -29,6 +29,7 @@ end
 
 gem_package 'bundler'
 
+
 package 'nginx' do
   action [:install]
 end

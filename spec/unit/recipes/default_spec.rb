@@ -39,6 +39,10 @@ describe 'rails-server::default' do
       expect(chef_run).to install_gem_package 'bundler'
     end
 
+    it 'should install rails' do
+      expect(chef_run). to install_gem_package 'rails'
+    end
+
     it "should install nginx" do
       expect(chef_run).to install_package 'nginx'
     end

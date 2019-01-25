@@ -30,6 +30,10 @@ describe package('nodejs') do
   it { should be_installed }
 end
 
+describe gem_package('rails') do
+  it { should be_installed }
+end
+
 describe package('build-essential') do
   it { should be_installed }
 end
