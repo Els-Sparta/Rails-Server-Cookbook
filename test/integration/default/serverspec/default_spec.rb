@@ -18,19 +18,15 @@ describe service("nginx") do
   it { should be_enabled }
 end
 
-describe port(80) do
-  it { should be_listening }
-end
-
-# describe http('http://localhost/8080', enable_remote_worker: true) do
-#   its('status') { should cmp 200 }
+# describe port(80) do
+#   it { should be_listening }
 # end
 
-describe package('nodejs') do
-  it { should be_installed }
+describe http("http://localhost", enable_remote_worker: true) do
+  its('status') { should cmp 502 }
 end
 
-describe gem_package('rails') do
+describe package('nodejs') do
   it { should be_installed }
 end
 

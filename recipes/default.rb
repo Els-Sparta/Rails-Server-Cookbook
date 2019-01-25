@@ -27,9 +27,6 @@ apt_update 'update' do
   action [:update]
 end
 
-gem_package 'bundler'
-
-
 package 'nginx' do
   action [:install]
 end
@@ -51,6 +48,8 @@ end
 service "nginx" do
   action [:enable, :start]
 end
+
+gem_package 'bundler'
 
 package 'git-core'
 package 'nodejs'
