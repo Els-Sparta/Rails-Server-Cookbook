@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+
+busser:
+  sudo: false
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-16.04
+    driver:
+      box: ubuntu/xenial64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[rails-server::default]
+    verifier:
+      inspec_tests:
+        - test/integration/default
